@@ -3,17 +3,15 @@ const https=require('https')
 const app=express()
 const bodyParser=require('body-parser');
 
-
+app.use(express.static("public"))
 app.use(bodyParser.urlencoded({ extended: true }));
 app.get('/',(req,res)=>{
     res.sendFile(__dirname+'/index.html')
 })
 app.post('/',(req,res)=>{
     const city=req.body.city
-    const units=req.body.unit
-    console.log(units)
     
-    url='https://api.openweathermap.org/data/2.5/weather?appid=870111657b9797a5e3ddab8b8a1d4ab6&q='+city+'&units='+units   
+    url='https://api.openweathermap.org/data/2.5/weather?appid=870111657b9797a5e3ddab8b8a1d4ab6&q='+city+'&units=metric'   
     https.get(url,(response)=>{
         response.on("data",(data)=>{
         const weatherData=JSON.parse(data)

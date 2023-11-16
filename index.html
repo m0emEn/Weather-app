@@ -4,13 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <form method="post">
-        <label for="city">City</label><input type="text" name="city"><br>
-        <input type="radio" name="unit" value="imperial">imperial<input type="radio" name="unit" value="metric">metric
-        <br>
-        <button type="submit">Submit</button>
+    <form method="post" autocomplete="off">
+        <div class="form">
+            <div class="inputs">
+                <input type="text" name="city" placeholder="City" class="city" id="city">
+                <input type="submit" value="Submit" class="btn">
+            </div>
+            
+            <div class="alist">
+                <ul id="list">
+                    
+                </ul>
+            </div>
+        </div>
+        
+        
+        
+
     </form>
+    
 </body>
 </html>
