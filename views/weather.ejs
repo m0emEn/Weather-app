@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:200,400,700" rel="stylesheet">
+</head>
+<body>
+    <form method="post" autocomplete="off">
+        
+        <div class="form">
+            <div class="inputs">
+                <input type="text" name="city" placeholder="City" class="city" id="city">
+                <input type="submit" value="Submit" class="btn">
+            </div>
+            
+        </div>
+    </form>
+    <article class="widget">
+        <div class="weatherIcon">
+            <% if(fet==true) {%>
+            <img src=<%= ic %>>
+            <% } %>
+        </div>
+        <div class="weatherInfo">
+          <div class="temperature"><span>
+            <% if(fet==true) {%>
+              <%= cityTemp %>
+              <% } %>
+            </span>
+             
+        </div>
+          <div class="description">    
+            <div class="weatherCondition">
+                <% if(fet==true) {%>
+                    <%=weaCon %>
+                <% } %>
+            </div>  
+            <% if(fet==true) {%>
+                <div class="place"><%=cityName%> <%= countryCode %></div>
+           <% }%>
+            
+          </div>
+        </div>
+        <div class="date"><%= m %></div>
+      </article>
+      
+      
+      
+      
+      
+      
+</body>
+</html>
