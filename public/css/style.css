@@ -65,6 +65,7 @@ input{
 
 form{
   width: 50%;
+
 }
 .group {
   display: flex;
@@ -73,6 +74,7 @@ form{
   position: relative;
   width: 100%;
   z-index: 5;
+  margin-bottom: 5px;
   
  }
  .input {
@@ -185,15 +187,27 @@ i{
   text-transform: capitalize;
 }
 
-@media only screen and (max-width: 860px){
+@media only screen and (max-width: 1000px){
 .weatherCondition,.date,span{
   font-size: 1rem;
 }
 
-
-
+form{
+  width: 80%;
+  margin: 5px;
+}
+.widget{
+  height: 250px;
+}
+.date{
+  height: 60%;
+}
+.weatherInfo{
+  height: 60%;
+}
 .weatherIcon{
   width: 20%;
+ height: 40%;
 }
 .weatherIcon img{
   max-width: 80%;
@@ -205,12 +219,15 @@ i{
     margin-top: 10px;
     align-items: flex-start;
   }
+
   .date{
     flex: 0 0 100%;
     border-bottom-left-radius: 20px;
+    height: 30%;
   }
   .weatherInfo{
     flex: 0 0 71.5%;
+    height: 30%;
     border-bottom-left-radius:0;
 
   }
