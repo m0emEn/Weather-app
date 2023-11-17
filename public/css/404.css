@@ -6,6 +6,7 @@
   body {
     padding: 0;
     margin: 0;
+    background-color: #A64253;
   }
   
   #notfound {
@@ -59,7 +60,7 @@
     font-weight: 400;
     text-transform: uppercase;
     color: #211b19;
-    background: #fff;
+    background-color: #A64253;
     padding: 10px 5px;
     margin: auto;
     display: inline-block;

@@ -1,16 +1,22 @@
 *{
-    font-family: 'Montserrat', sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 body{
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    
-    overflow-y: hidden;
+  font-family: 'Montserrat', sans-serif;
+  background:linear-gradient(225deg,#20A4F3,#27465d);
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+button{
+  all: unset;
+  cursor: pointer;
+  margin-bottom: 30px;
 }
 .form {
     margin-top: 50px;
@@ -50,83 +56,70 @@ input{
 }
 
 
-@import url(https://fonts.googleapis.com/css?family=Poiret+One);
 
 
 
 
-body {
-  background-color: #A64253;
-  font-family: Poiret One;
+
+
+
+form{
+  width: 50%;
 }
-
-.widget {
+.group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  z-index: 5;
+  
+ }
+ .input {
+  width: 100%;
+  line-height: 28px;
+  padding: 1rem 1rem;
+  padding-left: 3.5rem;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  outline: none;
+  background-color: #e9e9e9;
+  color: #0d0c22;
+  transition: .3s ease;
+  font-size: 24px;
+ }
+ 
+ .input::placeholder {
+  color: #9e9ea7;
+ }
+ 
+ .input:focus, input:hover {
+  outline: none;
+  
+  background-color: #fff;
+  box-shadow: 0 0 0 4px rgb(234 76 137 / 10%);
+ }
+ .icon {
   position: absolute;
-  top: 50%;
-  left: 50%;
+  left: 1rem;
+  fill: #9e9ea7;
+  width: 2rem;
+  height: 2rem;
+  
+ }
+.widget {
+  transition: .5s;
   display: flex;
   height: 300px;
-  width: 600px;
-  transform: translate(-50%, -50%);
+  width: 100%;
+  transform-origin: top;
   flex-wrap: wrap;
   cursor: pointer;
   border-radius: 20px;
   box-shadow: 0 27px 55px 0 rgba(0, 0, 0, 0.3), 0 17px 17px 0 rgba(0, 0, 0, 0.15);
-  
-  .weatherIcon{
-    flex: 1 100%;
-    height: 60%;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    background: #343333;
-    font-family: weathericons;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    font-size: 100px;
-    
-    i{
-      padding-top: 30px;
-    }
-  }
 
-  .weatherInfo{
-    flex: 0 0 70%;
-    height: 40%;
-    background: #080705;
-    border-bottom-left-radius: 20px;
-    display: flex;
-    align-items: center;
-    color: white;
-    
-    .temperature{
-      flex: 0 0 40%;
-      width: 100%;
-      font-size: 35px;
-      display: flex;
-      justify-content: space-around;
-    }
-    
-    .description{
-      flex: 0 60%;
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-      height: 100%;
-      justify-content: center;
-      
-      .weatherCondition{
-        text-transform: uppercase;
-        font-size: 35px;
-        font-weight: 100;
-      }
-      
-      .place{
-        font-size: 15px;
-        text-transform: capitalize;
-      }
-    }
   }
+  
   
   .date{
     flex: 0 0 30%;
@@ -140,5 +133,91 @@ body {
     font-size: 30px;
     font-weight: 800;
   }
+
+.weatherCondition{
+  text-transform: uppercase;
+  font-size: 35px;
+  font-weight: 100;
+}
+.weatherIcon{
+  flex: 1 100%;
+  height: 60%;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  background: #343333;
+  font-family: weathericons;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 100px;
+}
+i{
+  padding-top: 30px;
+}
+.weatherInfo{
+  flex: 0 0 70%;
+  height: 40%;
+  background: #080705;
+  border-bottom-left-radius: 20px;
+  display: flex;
+  align-items: center;
+  color: white;
+}
+  
+.temperature{
+  flex: 0 0 40%;
+  width: 100%;
+  font-size: 35px;
+  display: flex;
+  justify-content: space-around;
+}
+.description{
+  flex: 0 60%;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
 }
 
+.place{
+  font-size: 15px;
+  text-transform: capitalize;
+}
+
+@media only screen and (max-width: 860px){
+.weatherCondition,.date,span{
+  font-size: 1rem;
+}
+
+
+
+.weatherIcon{
+  width: 20%;
+}
+.weatherIcon img{
+  max-width: 80%;
+}
+
+}
+@media only screen and (max-width: 500px){
+  body{
+    margin-top: 10px;
+    align-items: flex-start;
+  }
+  .date{
+    flex: 0 0 100%;
+    border-bottom-left-radius: 20px;
+  }
+  .weatherInfo{
+    flex: 0 0 71.5%;
+    border-bottom-left-radius:0;
+
+  }
+  .description{
+    flex: 0 0 100%;
+    background-color: #080705;
+    border-radius: 0;
+    
+  }
+}
